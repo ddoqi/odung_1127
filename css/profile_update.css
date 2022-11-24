@@ -24,7 +24,7 @@
   top: 50%;
   left: 50%;
 
-  max-width: 400px;
+  max-width: 380px;
   max-height: 450px;
   width: 100%;
   height: 100%;
@@ -55,7 +55,7 @@
   left: 50%;
   transform: translate(-50%, 0);
   /* background-color: yellow; */
-  font-size: large;
+  font-size:large;
 }
 .pu_modal_user {
   width: 100%;
@@ -79,6 +79,7 @@
   height: 170px;
   background-color: black;
   border-radius: 50%;
+  box-shadow: 0 0 11px #a1a1a1;
   /* border-style: 1px solid black; */
   overflow: hidden;
 }
@@ -92,7 +93,7 @@
   position: fixed;
   width: 110px;
   height: 20px;
-  top: 60%;
+  top: 57%;
   left: 63%;
   /* background-color: aquamarine; */
   font-size: smaller;
@@ -107,6 +108,14 @@
   /* background-color: #eee; */
   border-style: solid;
   border-radius: 5px;
+}
+.profile_delete_button:hover{
+  color: #eee;
+  background-color: #333;
+}
+.profile_edit_button:hover{
+  color: #eee;
+  background-color: #333;
 }
 #profile_file {
   display: none;
@@ -138,7 +147,7 @@
   top: 78%;
   left: 50%;
   translate: -50% 0;
-  border: 1px solid #eee;
+  border: 1px solid #ffa920;
   border-radius: 10px;
 }
 .pu_btn_box {
@@ -147,22 +156,30 @@
   /* background-color: white; */
   position: absolute;
   top: 92%;
-  left: 30%;
+  left: 40%;
   
 }
 .pu_com_btn {
   position: absolute;
-  width: 65px;
+  width: 60px;
   height: 100%;
   left: 60px;
-  background-color: #eee;
+  color: #eee;
+  background-color: #ffa920;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 11px #a1a1a1;
 }
 
 .pu_close_btn {
   width: 60px;
   height: 100%;
   position: absolute;
-  left: 130px;
+  left: 120px;
   margin-left: 10px;
-  background-color: #eee;
+  color:#eee;
+  background-color: #333;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 11px #a1a1a1;
 }
