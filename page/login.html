@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>#Keyword Login</title>
+
+    <link rel="stylesheet" href="css/common.css" type=text/css> <link
+    rel="stylesheet" href="css/login.css" type=text/css>
+    <!-- google font cdn -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&family=Open+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="background"></div>
+    <div id="login_container">
+      <div id="login_wrap">
+        <h1 id="login_title">Login</h1>
+        <form method="post" action="서버의url" id="login_form">
+          <fieldset>
+            <div class="email_wrap">
+              <input
+                type="text"
+                id="email_area"
+                label="email_area"
+                placeholder="이메일을 입력해주세요."
+                class="shadow_input"
+              />
+            </div>
+            <div class="password_wrap">
+              <input
+                type="password"
+                id="password_area"
+                label="password_area"
+                placeholder="비밀번호를 입력해주세요."
+                class="shadow_input"
+              />
+            </div>
+            <label for="id_remmeber_check">
+              <div class="checkbox_wrap">
+                <input type="checkbox" id="id_remmeber_check" />
+                <p>아이디 기억하기</p>
+              </div>
+            </label>
+
+            <div class="find_wrap">
+              <a
+                href="#main"
+                title="로그인 찾기 페이지로"
+                target="_blank"
+                class="find_id"
+                >아이디 찾기</a
+              >
+              <a
+                href="#"
+                title="비밀번호 찾기 페이지로"
+                target="_blank"
+                class="find_pw"
+                >비밀번호 찾기</a
+              >
+              <a
+                href="#join"
+                title="회원가입 페이지로"
+                target="_blank"
+                class="find_pw"
+                >화원가입 하기</a
+              >
+            </div>
+
+            <input
+              type="submit"
+              id="login_submit"
+              class="normal_login"
+              value="Login"
+            />
+            <p class="simple_login_title">간편 로그인</p>
+            <input
+              type="submit"
+              id="login_submit"
+              class="github_login"
+              value="With Github"
+            />
+            <input
+              type="submit"
+              id="login_submit"
+              class="google_login"
+              value="With Google"
+            />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 아이디 찾기, 비밀번호 찾기 기능 구현 해보기 -->
+<!-- 회원가입 버튼 추가 -->

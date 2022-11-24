@@ -1,0 +1,171 @@
+html,
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+.pu_modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.pu_hidden {
+  display: none;
+}
+
+.pu_modal_overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.pu_modal_content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  max-width: 350px;
+  max-height: 400px;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+  transform: translateX(-50%) translateY(-50%);
+}
+.pu_modal_box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  /* background-color: aqua; */
+}
+.pu_modal_header {
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  /* background-color: yellow; */
+  font-size: large;
+}
+.pu_modal_user {
+  width: 100%;
+  height: 200px;
+  /* background-color: yellow; */
+  position: fixed;
+  top: 70px;
+  left: 0px;
+}
+.pu_modal_user_box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pu_modal_user_pic {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  background-color: black;
+  border-radius: 50%;
+  border-style: 1px solid black;
+  overflow: hidden;
+}
+.profile_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile_edit_box {
+  position: fixed;
+  width: 100px;
+  height: 25px;
+  top: 50%;
+  left: 63%;
+  /* background-color: aquamarine; */
+  font-size: smaller;
+}
+.profile_edit_button {
+  position: absolute;
+  cursor: pointer;
+  width: 45px;
+  height: 20px;
+  left: 0;
+  text-align: center;
+  /* background-color: #eee; */
+  border-style: solid;
+  border-radius: 5px;
+}
+#profile_file {
+  display: none;
+}
+.profile_delete_button {
+  position: absolute;
+  cursor: pointer;
+  width: 45px;
+  height: 20px;
+  float: left;
+  text-align: center;
+  /* background-color: #eee; */
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.pu_modal_user_nickname {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  top: 55%;
+  text-align: center;
+  /* background-color: gray; */
+}
+.pu_modal_textarea {
+  position: absolute;
+  width: 150px;
+  height: 30px;
+  top: 65%;
+  left: 100px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+.pu_btn_box {
+  width: 200px;
+  height: 40px;
+  /* background-color: white; */
+  position: absolute;
+  top: 400px;
+  left: 100%;
+  margin: 0 0 0 -200px;
+}
+.pu_com_btn {
+  position: absolute;
+  width: 65px;
+  height: 100%;
+  left: 60px;
+  background-color: #eee;
+}
+
+.pu_close_btn {
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  left: 130px;
+  margin-left: 10px;
+  background-color: #eee;
+}

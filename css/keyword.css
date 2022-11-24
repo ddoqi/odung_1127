@@ -1,0 +1,112 @@
+a {
+  text-decoration-line: none;
+  color: black;
+}
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.keyword_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+.key_back_img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.keyword_container {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.keyword_body {
+  background-color: #ffa920;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 500px;
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.keyword_top {
+  background-color: transparent;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  translate: -50% 0;
+  width: 350px;
+  height: 80px;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+
+.keyword_top:hover {
+  transform: scale(1.1);
+}
+
+.swiper {
+  background-color: transparent;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin: 0px 0px 0px -200px;
+  width: 80%;
+  height: 100px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.keyword_bottom_font {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  width: auto;
+  height: auto;
+  margin: 10px;
+}

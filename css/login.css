@@ -1,0 +1,167 @@
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    filter: opacity(.8);
+}
+
+#login_container {
+    width: 100%;
+    height: 100vh;
+    /* background-color: palegoldenrod; */
+}
+
+#login_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 500px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid #eee;
+    box-shadow: 0 0 11px #a1a1a1;
+}
+
+#login_title {
+    text-align: center;
+    font-size: 2.25rem;
+    padding: 50px 0 75px 0;
+    color: #f2f2f2;
+}
+
+#login_wrap .email_wrap, #login_wrap .password_wrap {
+    width: 300px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+#login_wrap .email_wrap{
+    margin-bottom: 30px;
+}
+
+#login_wrap .password_wrap {
+    margin-bottom: 30px;
+}
+
+#login_wrap .email_wrap input#email_area.shadow_input, #login_wrap .password_wrap input#password_area.shadow_input {
+    width: 300px;
+    height: 50px;
+    background-color: #eee;
+    border: none;
+    padding-left: 10px;
+    transition-duration: .3s;
+}
+
+#login_wrap .email_wrap input#email_area.shadow_input:focus, #login_wrap .password_wrap input#password_area.shadow_input:focus {
+    background-color: #d6d6d6;
+    box-shadow: 5px 5px 8px #333;
+    scale: 1.03;
+}
+
+#login_wrap .email_wrap input#email_area.shadow_input:focus::placeholder, #login_wrap .password_wrap input#password_area.shadow_input:focus::placeholder {
+    color: #111;
+}
+
+fieldset .checkbox_wrap {
+    position: relative;
+    top: 0;
+    left: 19.5%;
+    margin-bottom: 20px;
+    display: inline-flex; /* https://rgy0409.tistory.com/4813 / https://happygunja.tistory.com/83 인라인 플렉스 요소 설명*/
+}
+
+.checkbox_wrap p {
+    margin-left: 10px;
+    color: #f2f2f2;
+}
+
+fieldset .find_wrap {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 아이디 찾기, 비밀번호 찾기 공통속성. */
+fieldset .find_wrap .find_id, fieldset .find_wrap .find_pw {
+    width: 100%;
+    height: 100%;
+    padding: 3px 5px;
+    color: #f2f2f2;
+    transition-duration: .3s;
+    /* background-color: #ffa920; */
+} 
+fieldset .find_wrap .find_id:hover, fieldset .find_wrap .find_pw:hover {
+    color: #ffa920;
+}
+
+fieldset .find_wrap .find_id {
+    margin-right: 5px;
+}
+
+fieldset .find_wrap .find_pw {
+    margin-left: 5px;
+}
+
+
+#login_submit {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 50px;
+    border: none;
+    text-align: center;
+    font-family: 'Open';
+    font-size: 1.25rem;
+    /* value속성이 font로 인식된다. 처음 알았음. */
+    font-weight: 500;
+    background-color: #f2f2f2;
+    transition-duration: .3s;
+/* 사진 컨텐츠 위치 */
+    background-position: 40px;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+}
+
+#login_submit:hover {
+    background-color: #ffa920;
+}
+
+#login_submit.normal_login {
+    margin-bottom: 50px;
+}
+
+.simple_login_title {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+#login_submit.github_login {
+    margin-bottom: 20px;
+    background-image: url(../image/github_icon.png);
+}
+
+#login_submit.google_login {
+    background-image: url(../image/google_icon.png);
+}
+
+

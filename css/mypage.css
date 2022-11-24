@@ -1,0 +1,82 @@
+.hide {
+    display: none;
+}
+
+.box {
+    max-width: 350px;
+    max-height: 350px;
+    width: 350px;
+    height: 350px;
+    margin: 10px;
+    border : 1px solid red;
+    border-radius: 10px;
+    background-color: pink;
+}
+
+.my_post.flex {
+    position: relative;
+    max-width: 1480px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    /* margin-left: 350px; */
+    background-color: blue;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* 기존 중앙정렬 상태로 간격 줄어들면 밀려나는 컨첸츠 박스가 왼쪽부터 정렬되게 안되는지 방법 찾아보기 */
+    /* 지금은 밀려나는 컨텐츠가 중앙으로 온다. */
+    align-items: center;
+}
+
+.title {
+    display: block;
+    text-align: center;
+    font-size: 36px;
+    margin: 30px 0;
+    /* background: antiquewhite; */
+}
+
+.top_wrap.flex {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.top_wrap.flex .btn_wrap input {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.top_wrap.flex .btn_wrap.comment_btn_wrap input {
+    padding: 3px 6px;
+}
+
+
+.top_wrap.flex .btn_wrap input:last-child {
+    margin-right: 10px;
+}
+
+.my_comment {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.cont_title {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.contents {
+    font-size: 16px;
+    padding-top: 3px;
+    padding-left: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-height: 200px;
+    width: 95%;
+    margin: 0 auto;
+}

@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  top: 80px;
+  left: 100%;
+  margin: 0 0 0 -250px;
+  z-index: 1;
+}
+
+.dropbtn_icon {
+  font-family: "Material Icons";
+}
+.dropbtn {
+  display: block;
+  border: 2px solid rgb(94, 94, 94);
+  border-radius: 4px;
+  background-color: #fcfcfc;
+  font-weight: 400;
+  color: rgb(124, 124, 124);
+  padding: 12px;
+  width: 240px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 12px;
+  z-index: 1;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  font-weight: 400;
+  background-color: #fcfcfc;
+  min-width: 240px;
+  border-radius: 8px;
+  height: 150px;
+  overflow: scroll;
+  box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);
+}
+.dropdown-content::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+.dropdown-content::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgb(194, 194, 194);
+}
+
+.dropdown-content div {
+  display: block;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  font-size: 12px;
+  padding: 12px 20px;
+}
+.dropdown-content div:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+html,
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.hidden {
+  display: none;
+}
+
+.modal_overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.modal_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 500px;
+  height: 500px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+  transform: translateX(-50%) translateY(-50%);
+}
+.modal_box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  /* background-color: aqua; */
+}
+.modal_header {
+  position: absolute;
+  width: 350px;
+  height: 30px;
+  top: 30px;
+  left: 50%;
+  translate: -50% 0;
+  /* background-color: yellow; */
+}
+.modal_user {
+  width: 100%;
+  height: 40px;
+  /* background-color: yellow; */
+  position: absolute;
+  top: 130px;
+  left: 0px;
+}
+.modal_user_box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.modal_user_pic {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+}
+.modal_user_nickname {
+  position: absolute;
+  width: 80%;
+  height: 60%;
+  top: 40%;
+  text-align: left;
+  /* background-color: white; */
+  left: 50px;
+}
+.modal_textarea {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  top: 180px;
+  left: 50%;
+  translate: -50% 0;
+  text-align: left;
+  border: 1px solid #eee;
+}
+.btn_box {
+  width: 200px;
+  height: 40px;
+  /* background-color: white; */
+  position: absolute;
+  top: 400px;
+  left: 100%;
+  margin: 0 0 0 -200px;
+}
+.com_btn {
+  position: absolute;
+  width: 65px;
+  height: 100%;
+  left: 60px;
+  background-color: #eee;
+}
+
+.close_btn {
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  left: 130px;
+  margin-left: 10px;
+  background-color: #eee;
+}

@@ -1,0 +1,465 @@
+.empty_box {
+    width: 100%;
+    height: 250px;
+    /* background-color: rebeccapurple; */
+}
+
+.hide {
+    display: none;
+}
+
+.text_box {
+    max-width: 550px;
+    min-height: 300px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #eee;
+    /* border: none; */
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+
+/* ------------------------------------header 시작 */
+#header {
+    position: relative;
+    background-color: #fff;
+    z-index: 2000;
+}
+
+#header #header_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 150px;
+    height: 100%;
+    /* background-color: pink; */
+    border-bottom: 1px solid #e4e8eb;
+    display: grid;
+    grid-template-columns: 18% 64% 18%;
+
+}
+#header .logo_box{
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    margin: 0 auto;
+}
+#header .logo_case{
+    max-width: 150px;
+    max-height: 150px;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    /* background-color: gray; */
+    margin: 0 auto;
+}
+#header .logo_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#header .title_box{
+    position: relative;
+    /* background-color: green; */
+    width: 300px;
+    height: 150px;
+    padding: 0 30px;
+    display: flex;
+    margin: 0 auto;
+}
+
+#header .title_img {
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/Keyword.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header .profile_box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+}
+
+#header .profile_circle_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#header .profile_circle{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid red;
+    margin-right: 20px;
+}
+#header .profile_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ------------------------------------sidebar 시작 */
+#sidebar {
+    position: fixed;
+    top: 150px;
+    left: 0;
+    display: block;
+    /* overflow: hidden; */
+    max-width: 300px;
+    width: 100%;
+    height: 800px;
+    padding-bottom: 50px;
+    background-color: gray;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    box-sizing: border-box;
+    z-index: 200;
+
+
+    /* opacity: 0; */
+}
+
+#sidebar > h3 {
+    font-size: 32px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+#sidebar ul {
+    flex-direction: column;
+}
+#sidebar ul li {
+    display: inline;
+    width: 150px;
+    margin-left: 30px;
+}
+#sidebar a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    color: #fff;
+    /* border: 1px solid red; */
+    margin-bottom: 10px;
+    padding: 5px 20px;
+    font-size: 22px;
+    transition-duration: .3s;
+}
+
+#sidebar a:hover {
+    color: #000;
+}
+#sidebar ul li:hover a{
+    color: #ffa920;
+}
+#sidebar div {
+    position: absolute;
+    left: 50px;
+    line-height: 1.5;
+    font-size: 1em;
+    font-family: 'Noto Sans KR';
+    padding: 0 0 0 20px;
+}
+
+#mobile_sidebar .arrow {
+    position: fixed;
+    top: 170px;
+    left: 0;
+    z-index: 100;
+    cursor: pointer;
+    display: inline-block;
+    /* background-color: #ffa920; */
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    transition-duration: .3s;
+}
+#mobile_sidebar .arrow:hover::after, #mobile_sidebar .arrow:hover::before {
+    background-color: #333;
+}
+#mobile_sidebar .arrow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(45deg) translate(-50%,-50%);
+    width: 22px;
+    height: 2px;
+    background-color: #ffa920;
+    transition-duration: .3s;
+}
+#mobile_sidebar .arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(-45deg) translate(-50%,-50%);
+    width: 22px;
+    height: 2px;
+    background-color: #ffa920;
+    transition-duration: .3s;
+}
+/* ------------------------------------hashtag section */
+#hashtag_container {
+    position: fixed;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 100px;
+}
+
+#hashtag_wrap {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 100px;
+}
+
+#hashtag_container #hashtag_wrap .hashtag_contents.flex {
+    width: 100%;
+    height: 100%;
+    margin-left: 300px;
+    text-align: center;
+    font-size: 22px;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: .4s;
+}
+
+#hashtag_container #hashtag_wrap .hashtag_contents.flex a:first-child {
+    margin-left: 150px;
+}
+#hashtag_container #hashtag_wrap .hashtag_contents.flex a:last-child {
+    margin-right: 150px;
+}
+/* ------------------------------------#post_container 시작 */
+
+#post_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#post_container #write_wrap  {
+    position: relative;
+    top: 100px;
+    left: 0;
+    max-width: 600px;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    /* background-color: #ffa920; */
+    
+}
+
+#post_container #write_wrap > .wirte_btn.btn {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 0%;
+    width: 100px;
+    height: 50px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.5;
+    padding-top: 8px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    transition-duration: .3s;
+}
+#post_container #write_wrap > .wirte_btn.btn:hover {
+    border: 1px solid #ffa920;
+    background-color: #ffa920;
+    color: #f2f2f2
+}
+
+#post_container #post_wrap {
+    position: relative;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 15px;
+    margin-bottom: 200px;
+    /* background-color: aquamarine; */
+}
+
+#post_container #post_wrap .profile {
+    position: relative;
+    top: 30px;
+    left: 30px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url(../image/Keyword.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+#post_container #post_wrap .nickname {
+    position: absolute;
+    top: 50px;
+    right: -100%;
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    /* background-color: red; */
+}
+
+#post_container #post_wrap .img_box {
+    position: relative;
+    top: 50px;
+    width: 550px;
+    height: 400px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+#post_container #post_wrap .img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* background-color: #ffa920; */
+}
+
+#post_container #post_wrap textarea {
+    max-width: 550px;
+    max-height: 750px;
+    width: 100%;
+    height: 450px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-left: 10px;
+    border: 1px solid #eee;
+    /* border: none; */
+    font-size: 18px;
+    color: #333;
+    /* textarea 사이즈 고정 */
+    resize: none;
+}
+
+#post_container #post_wrap .comment {
+    max-width: 550px;
+    min-height: 150px;
+    width: 100%;
+    height: 100%;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #eee;
+    font-size: 16px;
+    color: #333;
+}
+
+#post_container #post_wrap .comment_btn {
+    display: inline-block;
+    /* width: 100%; */
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    transition-duration: .3s;
+}
+
+#post_container #post_wrap .comment_btn:hover {
+    background-color: #ffa920;
+    color: #f2f2f2;
+}
+
+#post_container #post_wrap #post_form .revise_wrap{
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#post_container #post_wrap #post_form .revise_wrap input {    
+    margin-top: 20px;
+    padding: 5px 15px;
+    font-size: 22px;
+    border: 1px solid #ffa920;
+    border-radius: 10px;
+}
+
+#post_container #post_wrap #post_form .revise_wrap input.edit {
+margin-right: 10px;
+}
+
+#post_container #post_wrap #post_form .revise_wrap input.cut {
+    margin-right: 25px;
+}
+
+/* ------------------------------------반응형 시작 */
+
+/* ------------------------------------1280px */
+@media screen and (max-width:1280px) {
+
+    #header #header_container {
+        grid-template-columns: 25% 50% 25%;
+        margin: 0 10px;
+    }
+
+    #sidebar {
+        left: -100%;
+    }
+
+    #mobile_sidebar .arrow {
+        transition-delay: .65s;
+        opacity: 1;
+    }
+
+    #hashtag_container #hashtag_wrap .hashtag_contents.flex {
+        margin-left: 0;
+    }
+}
+
+/* ------------------------------------1024px */
+@media screen and (max-width:1024px) {
+    #sidebar {
+
+    }
+}
+/* ------------------------------------768px */
+@media screen and (max-width:768px) {
+
+    #header #header_container {
+        grid-template-columns: 25% 50% 25%;
+        margin: 0 10px;
+    }
+
+
+}
+
+
+/* 해상도 1024, 768 마다 header 레아이웃 아이콘 안 깨지게 정갈하게 변경하기 */

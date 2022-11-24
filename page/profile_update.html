@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="profile_update.css" rel="stylesheet" type="text/css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>프로필</title>
+  </head>
+  <body>
+    <div class="pu_modal pu_hidden">
+      <div class="pu_modal_overlay">
+        <div class="pu_modal_content">
+          <div class="pu_modal_box">
+            <div class="pu_modal_header">프로필</div>
+            <div class="pu_modal_user">
+              <div class="pu_modal_user_box">
+                <div class="pu_modal_user_pic">
+                  <img class="profile_img" src="영진.jpeg" />
+                </div>
+                <div class="profile_edit_box">
+                  <label class="profile_edit_button" for="profile_file"
+                    >Upload</label
+                  >
+                  <input type="file" id="profile_file" />
+                  <label class="profile_delete_button">Delete</label>
+                </div>
+              </div>
+              <div class="pu_modal_user_nickname">nickname</div>
+            </div>
+            <div>
+              <textarea class="pu_modal_textarea"></textarea>
+            </div>
+            <div class="pu_btn_box">
+              <button class="pu_com_btn">수정</button>
+              <button class="pu_close_btn" onclick="pu_closeModal()">
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="pu_open_modal" onclick="pu_openModal()">프로필 수정</button>
+
+    <script src="profile_update.js"></script>
+  </body>
+</html>
