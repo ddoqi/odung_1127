@@ -34,6 +34,70 @@
     </div>
   </div>
 </div>
+<!-- 글 수정 모달 -->
+<div class="modal hidden">
+  <div class="modal_overlay" onclick="closeModal()"></div>
+  <div class="modal_content">
+    <div class="modal_box">
+      <div class="modal_header">뉴스피드 수정</div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <span class="dropbtn_icon">more_horiz</span>
+          <span class="dropbtn_content">#keyword...</span>
+          <span
+            class="dropbtn_click"
+            style="
+              font-family: Material Icons;
+              font-size: 16px;
+              color: #3b3b3b;
+              float: right;
+            "
+            onclick="dropdown()"
+            >arrow_drop_down</span
+          >
+        </button>
+        <div class="dropdown-content">
+          <div class="drop_keyword" onclick="showMenu(this.innerText)">
+            #운동
+          </div>
+          <div class="drop_keyword" onclick="showMenu(this.innerText)">
+            #개발공부
+          </div>
+          <div class="drop_keyword" onclick="showMenu(this.innerText)">
+            #카페
+          </div>
+          <div class="drop_keyword" onclick="showMenu(this.innerText)">
+            #인스턴트
+          </div>
+          <div class="drop_keyword" onclick="showMenu(this.innerText)">
+            #게임
+          </div>
+          <div class="drop_keyword" onclick="showMenu(this.innerText)">
+            #오둥이
+          </div>
+          <div class="drop_keyword" onclick="showMenu(this.innerText)">
+            #기타
+          </div>
+        </div>
+      </div>
+      <div class="modal_user">
+        <div class="modal_user_box">
+          <div class="modal_user_pic"></div>
+          <div class="modal_user_nickname">nickname</div>
+        </div>
+      </div>
+      <div>
+        <textarea class="modal_textarea"></textarea>
+      </div>
+      <div class="btn_box">
+        <button class="com_btn">게시</button>
+        <button class="close_modal close_btn" onclick="closeModal()">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- html5 시멘틱태그인 header로 상단 헤더임을 명시. -->
 <header id="header">
   <div id="header_container">
@@ -65,7 +129,7 @@
 </header>
 
 <!-- html5 시멘틱태그인 aside로 사이드바임을 명시. -->
-<aside id="sidebar">
+<!-- <aside id="sidebar">
   <h3>About</h3>
   <ul class="flex">
     <li>
@@ -78,12 +142,12 @@
       <a href="#keyword" class="item" title="최근 키워드 검색 목록">Keyword</a>
     </li>
   </ul>
-</aside>
+</aside> -->
 
 <!-- 모바일 환경에서 사이드바 토글 -->
-<aside id="mobile_sidebar" class="hide">
+<!-- <aside id="mobile_sidebar" class="hide">
   <span class="arrow"></span>
-</aside>
+</aside> -->
 
 <section id="hashtag_container">
   <div id="hashtag_wrap">
@@ -117,7 +181,7 @@
                 <div class="top_wrap flex">
                     <p class="cont_title">글제목</p>
                     <div class="btn_wrap">
-                        <input type="button" value="수정">
+                        <input onclick="openModal()" type="button" value="수정">
                         <input type="button" value="삭제">
                     </div>
                 </div>
@@ -129,7 +193,7 @@
                 <div class="top_wrap flex">
                     <p class="cont_title">글제목</p>
                     <div class="btn_wrap">
-                        <input type="button" value="수정">
+                        <input onclick="openModal()" type="button" value="수정">
                         <input type="button" value="삭제">
                     </div>
                 </div>

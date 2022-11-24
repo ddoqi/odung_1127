@@ -79,7 +79,7 @@
   height: 170px;
   background-color: black;
   border-radius: 50%;
-  border-style: 1px solid black;
+  /* border-style: 1px solid black; */
   overflow: hidden;
 }
 .profile_img {
@@ -90,8 +90,8 @@
 
 .profile_edit_box {
   position: fixed;
-  width: 100px;
-  height: 25px;
+  width: 110px;
+  height: 20px;
   top: 60%;
   left: 63%;
   /* background-color: aquamarine; */
@@ -100,7 +100,7 @@
 .profile_edit_button {
   position: absolute;
   cursor: pointer;
-  width: 45px;
+  width: 50px;
   height: 20px;
   left: 0;
   text-align: center;
