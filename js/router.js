@@ -8,9 +8,9 @@ const routes = {
   "/": "/page/keyword.html",
   login: "/page/login.html",
   join: "/page/join.html",
-  keyword: "/page/keyword.html",
   main: "/page/main.html",
   mypage: "/page/mypage.html",
+  comment: "/page/comment.html",
   404: "/page/404.html",
 };
 
@@ -27,7 +27,7 @@ export const handleLocation = async () => {
 
   document.getElementById("main-page").innerHTML = html;
 
-  if (path === "/" || path === "keyword") {
+  if (path === "/") {
     const swiper = new Swiper(".mySwiper", {
       direction: "vertical",
       spaceBetween: 30,

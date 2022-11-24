@@ -1,6 +1,15 @@
+body {
+    background-color: #f2f2f2;
+}
+
+/* 상단 헤더 여백은 이걸로 조정 */
 .empty_box {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
     width: 100%;
-    height: 250px;
+    height: 300px;
     /* background-color: rebeccapurple; */
 }
 
@@ -8,6 +17,7 @@
     display: none;
 }
 
+/* input 게시글 덧글 창 */
 .text_box {
     max-width: 550px;
     min-height: 300px;
@@ -15,12 +25,11 @@
     height: 100%;
     display: block;
     margin: 0 auto;
+    margin-bottom: 30px;
     padding: 10px;
-    border: 1px solid #eee;
+    border: 1px solid #aaa;
     /* border: none; */
     font-size: 18px;
-    color: #333;
-    margin-bottom: 30px;
 }
 
 
@@ -101,18 +110,24 @@
     display: flex;
     justify-content: center;
 }
-#header .profile_circle{
+
+#header .profile_circle {
     width: 64px;
     height: 64px;
     border-radius: 50%;
     overflow: hidden;
-    border: 1px solid #eee;
-    margin-right: 30px;
+    border: 1px solid #aaa;
     transition-duration: .3s;
 }
-
+#header .profile_circle:first-child {
+    margin-right: 10px;
+}
+#header .profile_circle:last-child {
+    margin-left: 10px;
+}
 #header .profile_circle:hover {
-    box-shadow: 2px 4px 3px #333;   
+    /* box-shadow: 0px 0px 3px #333;    */
+    border: 1px solid #f2f2f2;
 }
 
 #header .profile_circle a {
@@ -121,13 +136,8 @@
     width:100%;
     height: 100%;
     transition-duration: .3s;
-    
-    /* background-color: #ffa920 */
+    color: #aaa;
 }
-
-/* #header .profile_circle a:hover {
-    
-} */
 
 #header .profile_circle a:hover i {
     color: #ffa920;
@@ -145,26 +155,21 @@
     transition-duration: .3s;
 }
 
-
 /* ------------------------------------sidebar 시작 */
 #sidebar {
     position: fixed;
-    top: 150px;
+    top: 200px;
     left: 0;
     display: block;
-    /* overflow: hidden; */
-    max-width: 300px;
+    max-width: 220px;
     width: 100%;
     height: 800px;
-    padding-bottom: 50px;
-    background-color: gray;
+    background-color: rgb(120, 130, 120);
+    box-shadow: 3px 3px 7px #333;
     color: #fff;
     transition: all 0.5s ease-in-out;
     box-sizing: border-box;
-    z-index: 200;
-
-
-    /* opacity: 0; */
+    z-index: 999;
 }
 
 #sidebar > h3 {
@@ -179,7 +184,7 @@
 }
 #sidebar ul li {
     display: inline;
-    width: 150px;
+    width: 127px;
     margin-left: 30px;
 }
 #sidebar a {
@@ -212,40 +217,40 @@
 
 #mobile_sidebar .arrow {
     position: fixed;
-    top: 170px;
+    top: 150px;
     left: 0;
-    z-index: 100;
+    z-index: 101;
     cursor: pointer;
     display: inline-block;
-    /* background-color: #ffa920; */
-    width: 60px;
-    height: 60px;
-    opacity: 0;
+    width: 100px;
+    height: 50px;
     transition-duration: .3s;
 }
 #mobile_sidebar .arrow:hover::after, #mobile_sidebar .arrow:hover::before {
-    background-color: #333;
+    background-color: #ffa920;
 }
 #mobile_sidebar .arrow::after {
     content: '';
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 51%;
     transform: rotate(45deg) translate(-50%,-50%);
-    width: 22px;
-    height: 2px;
-    background-color: #ffa920;
+    width: 20px;
+    height: 3px;
+    background-color: #f2f2f2;
+    border-radius: 50px;
     transition-duration: .3s;
 }
 #mobile_sidebar .arrow::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 48%;
+    left: 54%;
     transform: rotate(-45deg) translate(-50%,-50%);
-    width: 22px;
-    height: 2px;
-    background-color: #ffa920;
+    width: 20px;
+    height: 3px;
+    background-color: #f2f2f2;
+    border-radius: 50px;
     transition-duration: .3s;
 }
 /* ------------------------------------hashtag section */
@@ -254,27 +259,39 @@
     top: 150px;
     left: 0;
     width: 100%;
-    height: 100px;
     border-bottom: 1px solid #eee;
-    margin-bottom: 100px;
+    z-index: 100;
 }
 
 #hashtag_wrap {
-    position: relative;
-    max-width: 100%;
     width: 100%;
-    height: 100px;
+    height: 50px;
+    background: rgba(70, 70, 70, 0.8);
+    transition-duration: .3s;
+}
+
+#hashtag_wrap:hover {
+    background: rgba(50,50, 50, 1);
 }
 
 #hashtag_container #hashtag_wrap .hashtag_contents.flex {
     width: 100%;
     height: 100%;
-    margin-left: 300px;
     text-align: center;
     font-size: 22px;
     justify-content: space-between;
     align-items: center;
     transition-duration: .4s;
+}
+
+#hashtag_container #hashtag_wrap .hashtag_contents.flex a {
+    font-size: 18px;
+    color: #f2f2f2;
+    transition-duration: .3s;
+}
+
+#hashtag_container #hashtag_wrap .hashtag_contents.flex a:hover {
+    color: #ffa920;
 }
 
 #hashtag_container #hashtag_wrap .hashtag_contents.flex a:first-child {
@@ -293,32 +310,29 @@
 
 #post_container #write_wrap  {
     position: relative;
-    top: 100px;
-    left: 0;
     max-width: 600px;
     width: 100%;
-    height: 100px;
+    height: 40px;
     margin: 0 auto;
+    margin-bottom: 10px;
     /* background-color: #ffa920; */
-    
 }
 
-#post_container #write_wrap > .write_btn.btn {
-    display: block;
+#post_container #write_wrap > .wirte_btn.btn {
     position: absolute;
-    top: 30px;
-    right: 0%;
-    width: 100px;
-    height: 50px;
-    font-size: 22px;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 40px;
+    font-size: 18px;
     text-align: center;
     line-height: 1.5;
-    padding-top: 8px;
+    padding-top: 5px;
     border: 1px solid #333;
     border-radius: 10px;
     transition-duration: .3s;
 }
-#post_container #write_wrap > .write_btn.btn:hover {
+#post_container #write_wrap > .wirte_btn.btn:hover {
     border: 1px solid #ffa920;
     background-color: #ffa920;
     color: #f2f2f2
@@ -326,7 +340,7 @@
 
 #post_container #post_wrap {
     position: relative;
-    top: 100px;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
     max-width: 600px;
@@ -339,8 +353,9 @@
 
 #post_container #post_wrap .profile {
     position: relative;
-    top: 30px;
-    left: 30px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 50px;
     display: inline-block;
     width: 100px;
     height: 100px;
@@ -399,13 +414,12 @@
     max-width: 550px;
     min-height: 150px;
     width: 100%;
-    height: 100%;
-    height: 300px;
+    height: 200px;
     display: block;
     margin: 0 auto;
     margin-bottom: 15px;
     padding: 10px;
-    border: 1px solid #eee;
+    border: 1px solid #aaa;
     font-size: 16px;
     color: #333;
 }
@@ -418,13 +432,14 @@
     margin-left: 20px;
     font-size: 20px;
     text-align: center;
-    border: 1px solid #eee;
+    border: 1px solid #333;
     border-radius: 15px;
     transition-duration: .3s;
 }
 
 #post_container #post_wrap .comment_btn:hover {
     background-color: #ffa920;
+    border: 1px solid #ffa920;
     color: #f2f2f2;
 }
 
@@ -451,135 +466,6 @@ margin-right: 10px;
     margin-right: 25px;
 }
 
-
-/* --------------------------------------------- 모달창 */
-/* #modal_container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-} */
-
-.modal {
-    position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 99999;
-        width: 100%;
-        height: 100%;
-    }
-.hidden{
-    display: none;
-}
-
-.modal_overlay{
-    background-color: rgba(0,0,0,0.5);
-    width: 100%;
-    height: 100%;
-}
-
-.modal_content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 550px;
-    max-height: 550px;
-    width: 100%;
-    height: 100%;
-    padding: 40px;
-
-    text-align: center;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    box-shadow: 0 2px 3px 0 rgb(34 36 38 / 15%);
-    
-}
-.modal_box{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 40px;
-    /* background-color: aqua; */
-
-}
-.modal_header{
-    position: absolute;
-    width: 350px;
-    height: 30px;
-    top: 30px;
-    left: 50px;
-    /* background-color: yellow; */
-}
-.modal_user{
-    width: 100%;
-    height: 40px;
-    /* background-color: yellow; */
-    position: absolute;
-    top: 130px;
-    left: 0px;
-}
-.modal_user_box{
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-.modal_user_pic{
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: black;
-    border-radius: 50%;
-}
-.modal_user_nickname{
-    position: absolute;
-    width: 80%;
-    height: 60%;
-    top:40%;
-    text-align: left;
-    /* background-color: white; */
-    left: 50px;
-
-}
-.modal_textarea{
-    position: absolute;
-    width: 100%;
-    height: 200px;
-    top: 180px;
-    left: -3px;
-    border: 1px solid #333;
-    border-radius: 10px;
-}
-.btn_box{
-    width: 200px;
-    height: 40px;
-    /* background-color: white; */
-    position: absolute;
-    top: 400px;
-    left: 100%;
-    margin: 0 0 0 -200px;
-}
-.com_btn{
-    position: absolute;
-    width: 65px;
-    height: 100%;
-    left: 60px;
-    background-color: #eee;
-}
-
-.close_btn{
-    width: 60px;
-    height: 100%;
-    position: absolute;
-    left: 130px;
-    margin-left: 10px;
-    background-color: #eee;
-}
-
-
 /* ------------------------------------반응형 시작 */
 
 /* ------------------------------------1280px */
@@ -587,7 +473,6 @@ margin-right: 10px;
 
     #header #header_container {
         grid-template-columns: 25% 50% 25%;
-        margin: 0 10px;
     }
 
     #sidebar {
@@ -615,9 +500,16 @@ margin-right: 10px;
 
     #header #header_container {
         grid-template-columns: 25% 50% 25%;
-        margin: 0 10px;
     }
 
+    #header .profile_circle {
+        width: 44px;
+        height: 44px;
+    }
+
+    #header .profile_circle a i {
+        font-size: 24px;
+    }
 
 }
 

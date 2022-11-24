@@ -32,6 +32,6 @@ export const showMenu = (value) => {
   dropbtn_icon.innerText = "";
   dropbtn_content.innerText = value;
   dropbtn_content.style.color = "#252525";
-  dropbtn.style.borderColor = "#3992a8";
+  dropbtn.style.borderColor = "#ffa920";
   v.classList.remove("show");
 };

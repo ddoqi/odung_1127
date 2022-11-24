@@ -1,34 +1,64 @@
+<!-- 메인페이지 게시물 작업 시작 -->
 <div class="empty_box"></div>
+<!-- 프로필수정 모달 -->
+<div class="pu_modal pu_hidden">
+  <div class="pu_modal_overlay">
+    <div class="pu_modal_content">
+      <div class="pu_modal_box">
+        <div class="pu_modal_header">프로필</div>
+        <div class="pu_modal_user">
+          <div class="pu_modal_user_box">
+            <div class="pu_modal_user_pic">
+              <img class="profile_img" src="영진.jpeg" />
+            </div>
+            <div class="profile_edit_box">
+              <label class="profile_edit_button" for="profile_file"
+                >Upload</label
+              >
+              <input type="file" id="profile_file" />
+              <label class="profile_delete_button">Delete</label>
+            </div>
+          </div>
+          <div class="pu_modal_user_nickname">nickname</div>
+        </div>
+        <div>
+          <textarea class="pu_modal_textarea"></textarea>
+        </div>
+        <div class="pu_btn_box">
+          <button class="pu_com_btn">수정</button>
+          <button class="pu_close_btn" onclick="pu_closeModal()">
+            닫기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- html5 시멘틱태그인 header로 상단 헤더임을 명시. -->
 <header id="header">
   <div id="header_container">
     <div class="logo_box">
       <div class="logo_case">
-        <a href="#main" title="메인페이지로 돌아가기">
-          <img class="logo_img" src="../image/Keyword.png" />
+        <a href="#" title="메인페이지로 돌아가기">
+          <img class="logo_img" src="image/Keyword.png" />
         </a>
       </div>
     </div>
     <div class="title_box">
-      <a class="title_img" href="#main" title="brand image"></a>
+      <a class="title_img" href="#" title="brand image"></a>
     </div>
     <div class="profile_box">
       <div class="profile_circle_box">
         <div class="profile_circle login">
-          <a href="#mypage" title="메인페이지로 돌아가기">
-            <i class="fa-solid fa-user"></i>
-          </a>
+            <a onclick="pu_openModal()" title="프로필 수정">
+                <i class="fa-solid fa-user"></i>
+            </a>
         </div>
         <div class="profile_circle">
-          <a href="#" title="메인페이지로 돌아가기">
-            <i class="fa-solid fa-right-from-bracket"></i>
-          </a>
+            <a href="#" title="로그아웃">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
         </div>
-        <!-- <div class="profile_circle">
-                        <a href="#" title="메인페이지로 돌아가기">
-                            <img class="profile_img" src="../image/Keyword.png">
-                        </a>
-                    </div> -->
       </div>
     </div>
   </div>
@@ -39,22 +69,22 @@
   <h3>About</h3>
   <ul class="flex">
     <li>
-      <a href="#mypage" class="item" title="내 프로필 보기">Profile</a>
+      <a href="#" class="item" title="내 프로필 보기">Main</a>
     </li>
     <li>
-      <a href="#" class="item" title="내 피드로 바로가기">My Home</a>
+      <a href="#mypage" class="item" title="내 피드로 바로가기">My Page</a>
     </li>
     <li>
       <a href="#" class="item" title="최근 키워드 검색 목록">Keyword</a>
     </li>
   </ul>
 </aside>
-<!-- 모바일 환경에서. -->
-<aside id="mobile_sidebar" class="show">
+
+<!-- 모바일 환경에서 사이드바 토글 -->
+<aside id="mobile_sidebar" class="hide">
   <span class="arrow"></span>
 </aside>
 
-<!-- 메인페이지 게시물 작업 시작 -->
 <section id="hashtag_container">
   <div id="hashtag_wrap">
     <div class="hashtag_contents flex">
@@ -72,18 +102,83 @@
 
 <section id="post_container">
   <div id="write_wrap">
-    <a href="#modal" title="글쓰기" target="_self" class="write_btn btn"
-      >글쓰기</a
-    >
+    <a onclick="openModal()" title="글쓰기" class="wirte_btn btn">글쓰기</a>
   </div>
+
+  <!-- <div class="modal hidden"> -->
+  <div class="modal hidden">
+    <div class="modal_overlay" onclick="closeModal()"></div>
+    <div class="modal_content">
+      <div class="modal_box">
+        <div class="modal_header">뉴스피드 등록</div>
+        <div class="dropdown">
+          <button class="dropbtn">
+            <span class="dropbtn_icon">more_horiz</span>
+            <span class="dropbtn_content">#keyword...</span>
+            <span
+              class="dropbtn_click"
+              style="
+                font-family: Material Icons;
+                font-size: 16px;
+                color: #3b3b3b;
+                float: right;
+              "
+              onclick="dropdown()"
+              >arrow_drop_down</span
+            >
+          </button>
+          <div class="dropdown-content">
+            <div class="drop_keyword" onclick="showMenu(this.innerText)">
+              #운동
+            </div>
+            <div class="drop_keyword" onclick="showMenu(this.innerText)">
+              #개발공부
+            </div>
+            <div class="drop_keyword" onclick="showMenu(this.innerText)">
+              #카페
+            </div>
+            <div class="drop_keyword" onclick="showMenu(this.innerText)">
+              #인스턴트
+            </div>
+            <div class="drop_keyword" onclick="showMenu(this.innerText)">
+              #게임
+            </div>
+            <div class="drop_keyword" onclick="showMenu(this.innerText)">
+              #오둥이
+            </div>
+            <div class="drop_keyword" onclick="showMenu(this.innerText)">
+              #기타
+            </div>
+          </div>
+        </div>
+        <div class="modal_user">
+          <div class="modal_user_box">
+            <div class="modal_user_pic"></div>
+            <div class="modal_user_nickname">nickname</div>
+          </div>
+        </div>
+        <div>
+          <textarea class="modal_textarea"></textarea>
+        </div>
+        <div class="btn_box">
+          <button class="com_btn">게시</button>
+          <button class="close_modal close_btn" onclick="closeModal()">
+            닫기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <button class="open_modal">Modal 띄우기</button> -->
+
   <div id="post_wrap">
     <div class="profile">
       <a class="nickname" href="#" title="nickname" target="_blank">홍길동</a>
     </div>
     <form method="post" action="서버가 받을 url" id="post_form">
-      <div class="img_box">
-        <img src="../image/Keyword.png" title="pic" />
-      </div>
+      <!-- <div class="img_box">
+        <img src="image/Keyword.png" title="pic" />
+      </div> -->
       <!-- <textarea placeholder="글 작성하기" class="hide"></textarea> -->
       <div class="text_box">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic debitis
@@ -112,57 +207,3 @@
     </form>
   </div>
 </section>
-
-<!-- 글쓰기 모달 -->
-<!-- <section id="modal_container"> -->
-<div class="modal hidden">
-  <div class="modal_overlay"></div>
-  <div class="modal_content">
-    <div class="modal_box">
-      <div class="modal_header">뉴스피드 등록</div>
-      <div class="dropdown">
-        <button class="dropbtn">
-          <span class="dropbtn_icon">more_horiz</span>
-          <span class="dropbtn_content">#keyword...</span>
-          <span
-            class="dropbtn_click"
-            style="
-              font-family: Material Icons;
-              font-size: 16px;
-              color: #3b3b3b;
-              float: right;
-            "
-            onclick="dropdown()"
-            >arrow_drop_down</span
-          >
-        </button>
-        <div class="dropdown-content">
-          <div class="fastfood" onclick="showMenu(this.innerText)">#운동</div>
-          <div class="fastfood" onclick="showMenu(this.innerText)">
-            #개발공부
-          </div>
-          <div class="fastfood" onclick="showMenu(this.innerText)">#카페</div>
-          <div class="fastfood" onclick="showMenu(this.innerText)">
-            #인스턴트
-          </div>
-          <div class="fastfood" onclick="showMenu(this.innerText)">#게임</div>
-          <div class="fastfood" onclick="showMenu(this.innerText)">#오둥이</div>
-          <div class="fastfood" onclick="showMenu(this.innerText)">#기타</div>
-        </div>
-      </div>
-      <div class="modal_user">
-        <div class="modal_user_box">
-          <div class="modal_user_pic"></div>
-          <div class="modal_user_nickname">nickname</div>
-        </div>
-      </div>
-      <div>
-        <textarea class="modal_textarea"></textarea>
-      </div>
-      <div class="btn_box">
-        <button class="com_btn">게시</button>
-        <button class="close_modal close_btn">닫기</button>
-      </div>
-    </div>
-  </div>
-</div>

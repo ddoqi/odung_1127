@@ -1,6 +1,7 @@
 import { authService } from "./firebase.js";
 import { handleLocation, route } from "./router.js";
 import { openModal, closeModal, dropdown, showMenu } from "./modal.js";
+import { pu_openModal, pu_closeModal} from "./profile_update.js";
 // import { swiper } from "./keyword.js";
 
 // hash url 변경 시 처리
@@ -27,4 +28,6 @@ window.openModal = openModal;
 window.closeModal = closeModal;
 window.dropdown = dropdown;
 window.showMenu = showMenu;
+window.pu_openModal = pu_openModal;
+window.pu_closeModal = pu_closeModal;
 // window.swiper = swiper;

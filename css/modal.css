@@ -54,7 +54,7 @@
   padding: 12px 20px;
 }
 .dropdown-content div:hover {
-  background-color: rgb(226, 226, 226);
+  background-color: #ffa920;
 }
 
 .dropdown-content.show {
@@ -157,7 +157,8 @@ body {
   left: 50%;
   translate: -50% 0;
   text-align: left;
-  border: 1px solid #eee;
+  border: 1px solid #ffa920;
+  padding: 10px;
 }
 .btn_box {
   width: 200px;

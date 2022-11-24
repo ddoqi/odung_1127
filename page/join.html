@@ -1,6 +1,7 @@
+<div class="join_background"></div>
 <div id="join_form_container">
   <div class="join_form_warp">
-    <h1 class="title">회원가입</h1>
+    <h1 class="join_title">회원가입</h1>
     <form
       method="post"
       action="정보를 서버로 보낼 때 도착할 서버의url"
@@ -10,6 +11,7 @@
         <div id="form_sort_wrap">
           <div id="name_wrap">
             <input
+              class="join_input"
               type="text"
               value=""
               placeholder="이름을 입력하세요."
@@ -18,14 +20,16 @@
           </div>
           <div id="email_wrap">
             <input
+              class="join_input"
               type="email"
               placeholder="이메일을 입력하세요."
               value=""
               id="email"
             />
           </div>
-          <div id="double_check_btn" class="btn">
+          <div id="double_check_btn" class="join_btn_hover">
             <input
+              class="join_input"
               type="button"
               value="중복 확인"
               id="double_check"
@@ -34,6 +38,7 @@
           </div>
           <div id="password_wrap">
             <input
+              class="join_input"
               type="password"
               value=""
               placeholder="비밀번호를 입력하세요."
@@ -42,14 +47,21 @@
           </div>
           <div id="re_password_wrap">
             <input
+              class="join_input"
               type="password"
               value=""
               placeholder="비밀번호를 한 번 더 입력하세요."
               id=""
             />
           </div>
-          <div id="join_btn" class="btn">
-            <input type="submit" value="회원가입하기" id="" class="btn_input" />
+          <div id="join_btn" class="join_btn_hover">
+            <input
+              class="join_input"
+              type="submit"
+              value="회원가입하기"
+              id=""
+              class="btn_input"
+            />
           </div>
         </div>
       </fieldset>
