@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleLocation();
     const hash = window.location.hash;
     if (user) {
-      if (hash === "" || hash === "/index.html") {
+      if (hash === "") {
   
         window.location.replace("#main");
       }
