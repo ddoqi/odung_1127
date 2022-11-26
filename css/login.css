@@ -30,8 +30,8 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  border: 1px solid #eee;
-  box-shadow: 0 0 11px #a1a1a1;
+  border: 1px solid #ffa920;
+  box-shadow: 0 0 11px #ffa920;
 }
 
 #login_title {
@@ -62,14 +62,20 @@
   height: 50px;
   background-color: #eee;
   border: none;
+  border-radius: 10px;
   padding-left: 10px;
+  font-size: 16px;
   transition-duration: 0.3s;
+}
+
+#login_wrap .email_wrap input#email_area.shadow_input:hover,
+#login_wrap .password_wrap input#password_area.shadow_input:hover {
+  box-shadow: 3px 3px 5px #aaa;
 }
 
 #login_wrap .email_wrap input#email_area.shadow_input:focus,
 #login_wrap .password_wrap input#password_area.shadow_input:focus {
-  background-color: #d6d6d6;
-  box-shadow: 5px 5px 8px #333;
+  box-shadow: 3px 3px 5px #aaa;
   scale: 1.03;
 }
 
@@ -89,6 +95,7 @@ fieldset .checkbox_wrap {
 .checkbox_wrap p {
   margin-left: 10px;
   color: #f2f2f2;
+  font-size: 14px;
 }
 
 fieldset .find_wrap {
@@ -144,6 +151,8 @@ fieldset .find_wrap .find_pw {
 
 #login_submit.normal_login {
   margin-bottom: 50px;
+  font-size: 18px;
+  border-radius: 10px;
 }
 
 .simple_login_title {
@@ -156,8 +165,12 @@ fieldset .find_wrap .find_pw {
 #login_submit.github_login {
   margin-bottom: 20px;
   background-image: url(../image/github_icon.png);
+  font-size: 18px;
+  border-radius: 10px;
 }
 
 #login_submit.google_login {
   background-image: url(../image/google_icon.png);
+  font-size: 18px;
+  border-radius: 10px;
 }

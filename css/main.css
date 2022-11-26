@@ -112,8 +112,8 @@ body {
 }
 
 #header .profile_circle {
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
     border: 1px solid #aaa;
@@ -148,10 +148,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 32px;
+    font-size: 24px;
     object-fit: cover;
     text-align: center;
-    color: #f2f2f2;
+    color: #333;
     transition-duration: .3s;
 }
 
@@ -163,7 +163,7 @@ body {
     display: block;
     max-width: 220px;
     width: 100%;
-    height: 800px;
+    height: 650px;
     background-color: rgb(120, 130, 120);
     box-shadow: 3px 3px 7px #333;
     color: #fff;
@@ -260,6 +260,8 @@ body {
     left: 0;
     width: 100%;
     border-bottom: 1px solid #eee;
+    background: rgba(70, 70, 70, 0.8);
+    transition-duration: .3s;
     z-index: 100;
 }
 
@@ -267,10 +269,9 @@ body {
     width: 100%;
     height: 50px;
     background: rgba(70, 70, 70, 0.8);
-    transition-duration: .3s;
 }
 
-#hashtag_wrap:hover {
+#hashtag_container:hover {
     background: rgba(50,50, 50, 1);
 }
 
@@ -292,6 +293,7 @@ body {
 
 #hashtag_container #hashtag_wrap .hashtag_contents.flex a:hover {
     color: #ffa920;
+    scale: 1.1;
 }
 
 #hashtag_container #hashtag_wrap .hashtag_contents.flex a:first-child {
@@ -316,6 +318,31 @@ body {
     margin: 0 auto;
     margin-bottom: 10px;
     /* background-color: #ffa920; */
+}
+
+#post_container #write_wrap > .dropdown {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+#post_container #write_wrap > .dropdown-content {
+    position: relative;
+    display: inherit;
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: none;
+    font-weight: 400;
+    background-color: #fcfcfc;
+    min-width: 240px;
+    border-radius: 8px;
+    height: 150px;
+    overflow: scroll;
+    box-shadow: 0px 0px 10px 3px rgb(190 190 190 / 60%);
 }
 
 #post_container #write_wrap > .wirte_btn.btn {
@@ -347,7 +374,7 @@ body {
     width: 100%;
     border: 1px solid #000;
     border-radius: 15px;
-    margin-bottom: 200px;
+    margin-bottom: 30px;
     /* background-color: aquamarine; */
 }
 
@@ -393,6 +420,17 @@ body {
     /* background-color: #ffa920; */
 }
 
+#post_container #post_wrap .category_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 25px;
+    margin-right: 30px;
+    padding: 5px;
+    font-size: 14px;
+    /* background-color: red; */
+}
+
 #post_container #post_wrap textarea {
     max-width: 550px;
     max-height: 750px;
@@ -410,13 +448,23 @@ body {
     resize: none;
 }
 
-#post_container #post_wrap .comment {
+#post_container .comment_box {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+}
+
+#post_container .comment {
     max-width: 550px;
     min-height: 150px;
     width: 100%;
     height: 200px;
     display: block;
     margin: 0 auto;
+    margin-top: 30px;
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #aaa;
@@ -424,7 +472,7 @@ body {
     color: #333;
 }
 
-#post_container #post_wrap .comment_btn {
+#post_container .comment_btn {
     display: inline-block;
     /* width: 100%; */
     padding: 10px 15px;
@@ -437,7 +485,7 @@ body {
     transition-duration: .3s;
 }
 
-#post_container #post_wrap .comment_btn:hover {
+#post_container .comment_btn:hover {
     background-color: #ffa920;
     border: 1px solid #ffa920;
     color: #f2f2f2;
@@ -464,6 +512,162 @@ margin-right: 10px;
 
 #post_container #post_wrap #post_form .revise_wrap input.cut {
     margin-right: 25px;
+}
+
+/* ------------------------------------.comment_container 시작 */
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.comment_container {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    margin-bottom: 10px;
+}
+
+.card-header {
+    max-width: 550px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+}
+
+.comment_pic_wrap {
+    max-width: 40px;
+    width: 100%;
+}
+
+.comment_pic_wrap > img {
+    max-width: 36px;
+    max-height: 36px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+}
+
+.comment_wrap {
+    padding: 10px 0 10px 7px;
+    font-size: 16px;
+}
+
+.comment_box {
+    margin-bottom: 10px;
+}
+
+
+.post_comment_title {
+    padding: 0 10px;
+    line-height: 2;
+    font-size: 18px;
+    border-right: 1px solid #aaa;
+}
+
+.post_comment_title > p {
+    max-width: 250px;
+    /* background-color: red; */
+}
+
+.post_comment {
+    margin-left: 10px;
+    padding: 5px;
+    line-height: 1.75;
+    letter-spacing: -0.01em;
+}
+
+/* .comment_wrap .user_icon {
+    width: 20px;
+    height: 20px;
+} */
+
+
+
+/* ------------------------------------#footer 시작 */
+#footer {
+    width: 100%;
+    height: 100%;
+    margin-top: 200px;
+    padding-top: 30px;
+    border-top: 1px solid #e4e8eb;
+}
+
+#footer .footer_container p{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#footer .footer_container .footer_title {
+    margin-bottom: 50px;
+    font-size: 26px;
+}
+
+#footer .footer_container .coworker_name.flex {
+    /* background-color: #ffa920; */
+    font-size: 18px;
+    margin-bottom: 100px;
+}
+
+#footer .css_mark {
+    text-align: center;
+    font-size: 8px;
+    margin-bottom: 50px;
+}
+
+/* ------------------------------------상단으로 바로가기 버튼 */
+.top_btn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 100;
+    width: 90px;
+    height: 90px;
+    line-height: 5.3;
+    text-align: center;
+    /* border:1px solid #aaa; */
+    border-radius: 50%;
+    background-color: #333;
+    color: #f2f2f2;
+    transition-duration: .3s;
+}
+
+.top_btn.top {
+    bottom: 160px;
+}
+
+.top_btn:hover {
+    background-color: #ffa920;
+    color: #333;
+}
+
+.top_btn p {
+    margin-top: 5px;
+}
+
+.top_btn i {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* ------------------------------------반응형 시작 */

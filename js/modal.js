@@ -35,3 +35,25 @@ export const showMenu = (value) => {
   dropbtn.style.borderColor = "#ffa920";
   v.classList.remove("show");
 };
+
+export const modaldropdown = () => {
+  let v = document.querySelector(".modal_dropdown_content");
+  let dropbtn = document.querySelector(".modal_dropbtn");
+
+  v.classList.toggle("show");
+  dropbtn.style.borderColor = "rgb(94, 94, 94)";
+};
+
+export const modalshowMenu = (value) => {
+  const dropbtn_icon = document.querySelector(".modal_dropbtn_icon");
+  const dropbtn_content = document.querySelector(".modal_dropbtn_content");
+  const dropbtn_click = document.querySelector(".modal_dropbtn_click");
+  const dropbtn = document.querySelector(".modal_dropbtn");
+  let v = document.querySelector(".modal_dropdown_content");
+
+  dropbtn_icon.innerText = "";
+  dropbtn_content.innerText = value;
+  dropbtn_content.style.color = "#252525";
+  dropbtn.style.borderColor = "#ffa920";
+  v.classList.remove("show");
+};
