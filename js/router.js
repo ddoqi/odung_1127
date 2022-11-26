@@ -19,7 +19,12 @@ const routes = {
 
 export const handleLocation = async () => {
   let path = window.location.hash.replace("#", ""); // #login 을 login 으로 저장  path = login 상태
-
+  //다경님 추가한부분!
+  const pathName = window.location.pathname;
+  if (pathName === "/index.html") {
+    window.history.pushState({}, "", "/");
+  }
+  
   // "http://example.com/"가 아니라 도메인 뒤에 / 없이 "http://example.com" 으로 나오는 경우
   if (path.length == 0) {
     path = "/";

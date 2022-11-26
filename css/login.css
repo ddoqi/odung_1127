@@ -163,7 +163,6 @@ fieldset .find_wrap .find_pw {
 }
 
 #login_submit.github_login {
-  margin-bottom: 20px;
   background-image: url(../image/github_icon.png);
   font-size: 18px;
   border-radius: 10px;
@@ -173,4 +172,5 @@ fieldset .find_wrap .find_pw {
   background-image: url(../image/google_icon.png);
   font-size: 18px;
   border-radius: 10px;
+  margin-bottom: 20px;
 }

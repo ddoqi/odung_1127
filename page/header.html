@@ -1,6 +1,7 @@
 <div class="empty_box"></div>
 
 <!-- 프로필수정 모달 -->
+<form id="profileForm" onsubmit="changeProfile(event)">
 <div class="pu_modal pu_hidden">
     <div class="pu_modal_overlay">
       <div class="pu_modal_content">
@@ -9,23 +10,32 @@
           <!-- <div class="pu_modal_user"> -->
             <!-- <div class="pu_modal_user_box"> -->
               <div class="pu_modal_user_pic">
-                <img class="pu_profile_img" src="/image/Keyword.png" />
+                <label id="imgLabel" for="imgInput">
+                  <img class="pu_profile_img" src="/image/Keyword.png" id="profileView"/>
+                  <input
+                    onchange="onFileChange(event)"
+                    id="imgInput"
+                    type="file"
+                    accept="images/*"
+                    style="display:none"
+                  />
+                </label>
               <!-- </div> -->
               <div class="profile_edit_box">
-                <label class="profile_edit_button" for="profile_file"
+                <label class="profile_edit_button" for="profile_file" onclick="onFileChange(event)"
                   >Upload</label
                 >
                 <input type="file" id="profile_file" />
-                <label class="profile_delete_button">Delete</label>
+                <label class="profile_delete_button" onclick="DeletePhoto()">Delete</label>
               </div>
             <!-- </div> -->
-            <div class="pu_modal_user_nickname">nickname</div>
+            <div class="pu_modal_user_nickname" id="nickname">nickname</div>
           </div>
           <div>
-            <textarea class="pu_modal_textarea"></textarea>
+            <input class="pu_modal_textarea" id="profileNickname" type="text" value=""/>
           </div>
           <div class="pu_btn_box">
-            <button class="pu_com_btn">수정</button>
+            <input type="submit" class="pu_com_btn" id="profileBtn" value="수정"/>
             <button class="pu_close_btn" onclick="pu_closeModal()">
               닫기
             </button>
@@ -34,6 +44,7 @@
       </div>
     </div>
   </div>
+</form>
   <!-- html5 시멘틱태그인 header로 상단 헤더임을 명시. -->
   <header id="header">
     <div id="header_container">
@@ -66,34 +77,34 @@
   <div id="hashtag_container" class="swiper mySwiper">
     <div id="hashtag_wrap" class="swiper-wrapper">
       <div class="hashtag_contents flex swiper-slide">
-        <a href="#" title="바로가기" target="_blank">#영화</a>
-        <a href="#" title="바로가기" target="_blank">#독서</a>
-        <a href="#" title="바로가기" target="_blank">#운동</a>
-        <a href="#" title="바로가기" target="_blank">#음악</a>
-        <a href="#" title="바로가기" target="_blank">#산책</a>
-        <a href="#" title="바로가기" target="_blank">#게임</a>
-        <a href="#" title="바로가기" target="_blank">#술</a>
-        <a href="#" title="바로가기" target="_blank">#반려동물</a>
+        <a href="#main" title="바로가기" target="_blank">#영화</a>
+        <a href="#main" title="바로가기" target="_blank">#독서</a>
+        <a href="#main" title="바로가기" target="_blank">#운동</a>
+        <a href="#main" title="바로가기" target="_blank">#음악</a>
+        <a href="#main" title="바로가기" target="_blank">#산책</a>
+        <a href="#main" title="바로가기" target="_blank">#게임</a>
+        <a href="#main" title="바로가기" target="_blank">#술</a>
+        <a href="#main" title="바로가기" target="_blank">#반려동물</a>
       </div>
       <div class="hashtag_contents flex swiper-slide">
-        <a href="#" title="바로가기" target="_blank">#헬스</a>
-        <a href="#" title="바로가기" target="_blank">#맛집</a>
-        <a href="#" title="바로가기" target="_blank">#게임</a>
-        <a href="#" title="바로가기" target="_blank">#피자</a>
-        <a href="#" title="바로가기" target="_blank">#골프</a>
-        <a href="#" title="바로가기" target="_blank">#치킨</a>
-        <a href="#" title="바로가기" target="_blank">#테니스</a>
-        <a href="#" title="바로가기" target="_blank">#고양이</a>
+        <a href="#main" title="바로가기" target="_blank">#헬스</a>
+        <a href="#main" title="바로가기" target="_blank">#맛집</a>
+        <a href="#main" title="바로가기" target="_blank">#게임</a>
+        <a href="#main" title="바로가기" target="_blank">#피자</a>
+        <a href="#main" title="바로가기" target="_blank">#골프</a>
+        <a href="#main" title="바로가기" target="_blank">#치킨</a>
+        <a href="#main" title="바로가기" target="_blank">#테니스</a>
+        <a href="#main" title="바로가기" target="_blank">#고양이</a>
       </div>
       <div class="hashtag_contents flex swiper-slide">
-        <a href="#" title="바로가기" target="_blank">#강아지</a>
-        <a href="#" title="바로가기" target="_blank">#파충류</a>
-        <a href="#" title="바로가기" target="_blank">#탁구</a>
-        <a href="#" title="바로가기" target="_blank">#축구</a>
-        <a href="#" title="바로가기" target="_blank">#야구</a>
-        <a href="#" title="바로가기" target="_blank">#안주</a>
-        <a href="#" title="바로가기" target="_blank">#연애</a>
-        <a href="#" title="바로가기" target="_blank">#결혼</a>
+        <a href="#main" title="바로가기" target="_blank">#강아지</a>
+        <a href="#main" title="바로가기" target="_blank">#파충류</a>
+        <a href="#main" title="바로가기" target="_blank">#탁구</a>
+        <a href="#main" title="바로가기" target="_blank">#축구</a>
+        <a href="#main" title="바로가기" target="_blank">#야구</a>
+        <a href="#main" title="바로가기" target="_blank">#안주</a>
+        <a href="#main" title="바로가기" target="_blank">#연애</a>
+        <a href="#main" title="바로가기" target="_blank">#결혼</a>
       </div>
     </div>
   </div>

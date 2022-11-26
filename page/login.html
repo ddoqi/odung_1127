@@ -2,7 +2,8 @@
   <div id="login_container">
     <div id="login_wrap">
       <h1 id="login_title">Login</h1>
-      <form method="post" action="서버의url" id="login_form">
+
+        <form onsubmit="loginAction(event)" id="login_form">
         <fieldset>
           <div class="email_wrap">
             <input
@@ -39,9 +40,8 @@
               class="find_pw"
               >비밀번호 찾기</a
             >
-            <a href="#join" title="회원가입 페이지로" class="find_pw"
-              >회원가입 하기</a
-            >
+            <a class="find_pw" onclick="moveJoinPage()">회원가입 하기 </a>
+            
           </div>
 
           <input
@@ -50,8 +50,9 @@
             class="normal_login"
             value="Login"
           />
+          
           <p class="simple_login_title">간편 로그인</p>
-          <input
+          <!-- <input
             type="submit"
             id="login_submit"
             class="github_login"
@@ -62,7 +63,13 @@
             id="login_submit"
             class="google_login"
             value="With Google"
-          />
+          /> -->
+          <section class="socialBtns">
+            <button name="google" onclick="socialLogin(event)" id="login_submit"
+            class="google_login">Google Login</button>
+            <button name="github" onclick="socialLogin(event)" id="login_submit"
+            class="github_login">Github Login</button>
+          </section>
         </fieldset>
       </form>
     </div>
