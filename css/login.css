@@ -56,8 +56,8 @@
   margin-bottom: 30px;
 }
 
-#login_wrap .email_wrap input#email_area.shadow_input,
-#login_wrap .password_wrap input#password_area.shadow_input {
+#login_wrap .email_wrap input#email.shadow_input,
+#login_wrap .password_wrap input#pw.shadow_input {
   width: 300px;
   height: 50px;
   background-color: #eee;
@@ -68,19 +68,19 @@
   transition-duration: 0.3s;
 }
 
-#login_wrap .email_wrap input#email_area.shadow_input:hover,
-#login_wrap .password_wrap input#password_area.shadow_input:hover {
+#login_wrap .email_wrap input#email.shadow_input:hover,
+#login_wrap .password_wrap input#pw.shadow_input:hover {
   box-shadow: 3px 3px 5px #aaa;
 }
 
-#login_wrap .email_wrap input#email_area.shadow_input:focus,
-#login_wrap .password_wrap input#password_area.shadow_input:focus {
+#login_wrap .email_wrap input#email.shadow_input:focus,
+#login_wrap .password_wrap input#pw.shadow_input:focus {
   box-shadow: 3px 3px 5px #aaa;
   scale: 1.03;
 }
 
-#login_wrap .email_wrap input#email_area.shadow_input:focus::placeholder,
-#login_wrap .password_wrap input#password_area.shadow_input:focus::placeholder {
+#login_wrap .email_wrap input#email.shadow_input:focus::placeholder,
+#login_wrap .password_wrap input#pw.shadow_input:focus::placeholder {
   color: #111;
 }
 
