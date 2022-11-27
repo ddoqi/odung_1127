@@ -1,8 +1,9 @@
-export const route = (event) => {
-  event.preventDefault();
-  console.log("event.target.hash:", event.target.hash);
-  window.location.hash = event.target.hash;
-};
+/* 채하 시작 */
+import { authService } from "./firebase.js";
+import { getpostList } from "./pageJs/new_main.js";
+import { getpostList2 } from "./pageJs/page2.js";
+/* 채하 끝 */
+
 
 const routes = {
   "/": "/page/keyword.html",
@@ -10,11 +11,20 @@ const routes = {
   sidebar: "/page/sidebar.html",
   login: "/page/login.html",
   join: "/page/join.html",
-  main: "/page/main.html",
-  mypage: "/page/mypage.html",
+  main: "/page/new_main.html",
+  mypage: "/page/new_mypage.html",
   comment: "/page/comment.html",
   footer: "/page/footer.html",
   404: "/page/404.html",
+  /* 채하 시작 */
+  page2: "./pageJs/page2.html",
+/* 채하 끝 */
+};
+
+export const route = (event) => {
+  event.preventDefault();
+  console.log("event.target.hash:", event.target.hash);
+  window.location.hash = event.target.hash;
 };
 
 export const handleLocation = async () => {
@@ -58,6 +68,25 @@ export const handleLocation = async () => {
     document.getElementById("index_page").innerHTML = pagehtml;
     document.getElementById("index_footer").innerHTML = footerhtml;
 
+// gg
+        //메인페이지 사진,닉네임 변경 부분
+    //메인페이지의 nickname을 nickname1이라고 변경
+    document.getElementById("nickname1").textContent =
+    authService.currentUser.displayName ?? "닉네임 없음";
+    //🟡🟡🟡🟡🟡🟡 채하님 지금 채하님 작업하시는 메인페이지에 "profileImg"가 우선 없었어용
+    //🟡🟡🟡🟡🟡🟡 일단 주석처리 해놓고 나중에 profileImg=메인 조회되어온 글에 있는 프로필이미지 id얘로 맞춰서 추가하시면 되세용~
+    // document.getElementById("profileImg").src =
+    // authService.currentUser.photoURL ?? "/image/Keyword.png";
+   
+    //모달창 프로필 사진, 닉네임 변경
+    //profileView :모달창 사진
+    //nickname : 모달창 닉네임
+    document.getElementById("nickname").textContent =
+    authService.currentUser.displayName ?? "닉네임 없음";
+    document.getElementById("profileView").src =
+    authService.currentUser.photoURL ?? "/image/Keyword.png";
+// gg
+
   }
 
   if (path === "mypage" || path === "comment"){
@@ -92,19 +121,44 @@ export const handleLocation = async () => {
   }
 
 
-if (path === "mypage" || path === "main" || path == "comment") {
-  const swiper = new Swiper(".mySwiper", {
-    direction: "vertical",
-    spaceBetween: 30,
-    centeredSlides: true,
-    loop: true,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
-  });
+  if (path === "mypage" || path === "main" || path == "comment") {
+    const swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+    });
+  };
+  /* 채하시작 */
+  if (path === "new_main") {
+    //if문으로 꼭 현재 어떤페이지인지 표시해주어야함
+    // 로그인한 회원의 프로필사진과 닉네임을 화면에 표시해줌.
+    console.log("authService.currentUser:", authService.currentUser);
+    document.getElementById("nickname").textContent =
+      authService.currentUser.displayName ?? "닉네임"; //null병합연산자 ??
+
+    document.getElementById("profileImg").src =
+      authService.currentUser.photoURL ?? "../assets/blankProfile.webp";
+
+    getpostList();
+  }
+
+  if (path === "page2"){
+    getpostList2();
+  }
+  /* 채하끝 */
 };
+
+/* 채하시작 */
+export const goToFilter = () => {
+  window.location.hash = "#page2";
 };
+/* 채하끝 */
+
 
 // if ( || path === "comment" || path === "main"){
 //   const swiper = new Swiper(".mySwiperhead", {
